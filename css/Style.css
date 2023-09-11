@@ -1,0 +1,26 @@
+body{
+background-color: rgba(202, 17, 17, 0.952);
+}
+
+/* Ajoutez un style CSS pour définir la taille du bouton et l'image de fond */
+        .play {
+            background-color:  rgba(202, 17, 17, 0.952);
+            width: 100px; 
+            height: 100px; 
+            background-image: url('../pictures/play.png');
+            background-size: cover; 
+            border: none; 
+            cursor: pointer;
+        }
+
+.travail-pause{
+    width: 100%;
+    align-items: center;
+}
+
+        .modif{
+            cursor: pointer;
+            border-radius: 10%;
+            width: 10%;
+            height: 5vh;
+        }
