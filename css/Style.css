@@ -1,26 +1,35 @@
-body{
-background-color: rgba(202, 17, 17, 0.952);
-}
-
-/* Ajoutez un style CSS pour définir la taille du bouton et l'image de fond */
-        .play {
-            background-color:  rgba(202, 17, 17, 0.952);
-            width: 100px; 
-            height: 100px; 
-            background-image: url('../pictures/play.png');
-            background-size: cover; 
-            border: none; 
-            cursor: pointer;
-        }
-
-.travail-pause{
-    width: 100%;
+body {
+    background-color: rgba(202, 17, 17, 0.952);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
     align-items: center;
 }
 
-        .modif{
-            cursor: pointer;
-            border-radius: 10%;
-            width: 10%;
-            height: 5vh;
-        }
+.play {
+    margin-top: 30%;
+    background-color: rgba(202, 17, 17, 0);
+    width: 10vh;
+    height: 10vh;
+    background-image: url('../pictures/play.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+
+.travail-pause {
+    width: 100%;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+}
+
+.modif {
+    background-color: rgba(255, 0, 0, 0);
+    cursor: pointer;
+    border-radius: 10%;
+    width: 10%;
+    height: 7vh;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    color: rgb(255, 255, 255);
+}
