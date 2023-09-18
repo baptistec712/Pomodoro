@@ -6,22 +6,21 @@ body {
     align-items: center;
 }
 
-.play {
-    margin-top: 30%;
-    background-color: rgba(202, 17, 17, 0);
-    width: 10vh;
-    height: 10vh;
-    background-image: url('../pictures/play.png');
-    background-size: cover;
+.btnplay{
+    background-color: rgba(255, 0, 0, 0) ;
     border: none;
-    cursor: pointer;
 }
 
+.play{
+    width: 10vh;
+    cursor: pointer;
+}
 .travail-pause {
     width: 100%;
     text-align: center;
-    display: flex; 
-    justify-content: center; 
+    flex-direction: column; /* Ajoutez cette ligne pour afficher les éléments en colonne */
+    align-items: center;
+    justify-content: center;
 }
 
 .modif {
@@ -32,4 +31,9 @@ body {
     height: 7vh;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     color: rgb(255, 255, 255);
+}
+
+.timer{
+    font-size: 10vh;
+    display: flex;
 }
