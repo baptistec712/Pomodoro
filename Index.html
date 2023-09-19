@@ -7,19 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
+    <script src="https://kit.fontawesome.com/04d7ca8f7a.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1 class="titre">TIMER POMODORO</h1>
-    <div class="travail-pause">
-        <div id="timer" class="timer">25:00</div>
-    </br>
-        <button class="btnplay" onclick="start()">
-            <img class="play" src="./pictures/play.png" alt="Play">
-          </button>
-          
+    <div id="travail">
+        <h1 class="titre">TIMER POMODORO</h1>
+        <div class="texte">
+            <p id="phasetravail">Travail</p><p id="phasepause">Pause</p>
+        </div>
+        <div class="travail-pause">
+            <div id="timer" class="timer"></div>
+        </div>
+        <div class="btn">
+            <button class="btnplay" onclick="start()" id="play"><i class="fa-solid fa-play"></i></button>
+            <button class="btnplay" style="display: none;" onclick="stop()" id="stop"><i
+                    class="fa-solid fa-rotate-right"></i></button>
+        </div>
     </div>
-    <script src="../Pomodoro/js/Pomodoro.js"></script>
+        <script src="../Pomodoro/js/Pomodoro.js"></script>
+    
 </body>
 
 </html>
