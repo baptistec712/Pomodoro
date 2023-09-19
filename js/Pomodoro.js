@@ -11,7 +11,7 @@ playButton.addEventListener('click', function () {
 
 
 
-let departMinutes = 0.1;
+let departMinutes = 25;
 let temps = departMinutes * 60;
 let timerInterval; // Cette variable stockera l'ID de l'intervalle
 let boucle = 0;
@@ -41,7 +41,7 @@ function start() {
         console.log(boucle);
         if (temps === 0 && boucle < 1) {
             clearInterval(timerInterval);
-            departMinutes = 0.1;
+            departMinutes = 5;
             temps = departMinutes * 60;
             const timerElement = document.getElementById("timer");
             boucle++;
@@ -50,10 +50,10 @@ function start() {
             let change = document.getElementById("travail");
             change.id = 'pause';
 
-            if (temps === 0) {
-                document.body.style.backgroundColor = "red";
-                let change = document.getElementById("pause");
-            }
+            // if (change) {
+            //     document.body.style.backgroundColor = "red";
+            //     let change = document.getElementById("pause");
+            // }
         }
     }, 1000);
 }
@@ -61,6 +61,9 @@ function start() {
 function stop() {
     location.reload();
 }
+
+let form1 = document.getElementById('tmpstravail').value;
+let form2 = document.getElementById('tmpspause').value;
 
 //recharge la page : location.reload();
 //https://www.commentcoder.com/timer-javascript/

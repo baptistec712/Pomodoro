@@ -101,5 +101,10 @@ body {
 #travail .btn, #pause .btn{
     display: block;
     margin: auto;    
+    margin-bottom: 15%;
+}
+
+.txtform{
+    color: white;
 }
 
