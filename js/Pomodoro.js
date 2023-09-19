@@ -1,5 +1,5 @@
-var playButton = document.getElementById('play');
-var stopButton = document.getElementById('stop');
+let playButton = document.getElementById('play');
+let stopButton = document.getElementById('stop');
 
 // Ajoutez un gestionnaire d'événements au bouton "Play"
 playButton.addEventListener('click', function () {
@@ -9,12 +9,33 @@ playButton.addEventListener('click', function () {
     stopButton.style.display = "block";
 });
 
+let travailtemps = document.getElementById('tmpstravail');
+let pausetemps = document.getElementById('tmpspause');
+
+travailtemps.addEventListener('change', ()=>{
+localStorage.setItem('travailtemps', travailtemps.value)
+let test = /^(?:[1-9]|[1-5][0-9]|60)$/.test(travailtemps.value);
+
+})
+pausetemps.addEventListener('change', ()=>{
+    localStorage.setItem('pausetemps', pausetemps.value)
+    let test2 = /^(?:[1-9]|[1-5][0-9]|60)$/.test(travailtemps.value);
+    
+    })
 
 
+let departpause = 5;
 let departMinutes = 25;
+if(localStorage.getItem('travailtemps') !== null){
+    departMinutes = parseInt(localStorage.getItem('travailtemps'))
+}
+if(localStorage.getItem('pausetemps') !== null){
+    departpause = parseInt(localStorage.getItem('pausetemps'))
+}
 let temps = departMinutes * 60;
-let timerInterval; // Cette variable stockera l'ID de l'intervalle
+let timerInterval;
 let boucle = 0;
+
 
 const timerElement = document.getElementById("timer");
 
@@ -24,10 +45,10 @@ minutes = minutes < 10 ? "0" + minutes : minutes;
 secondes = secondes < 10 ? "0" + secondes : secondes;
 timerElement.innerText = `${minutes}:${secondes}`;
 
+
 function start() {
-    // Si un intervalle précédent est en cours, on le supprime
     clearInterval(timerInterval);
-    // Réinitialise le temps à sa valeur initiale
+
     temps = departMinutes * 60;
 
     timerInterval = setInterval(() => {
@@ -41,7 +62,7 @@ function start() {
         console.log(boucle);
         if (temps === 0 && boucle < 1) {
             clearInterval(timerInterval);
-            departMinutes = 5;
+            departMinutes = departpause;
             temps = departMinutes * 60;
             const timerElement = document.getElementById("timer");
             boucle++;
@@ -50,10 +71,6 @@ function start() {
             let change = document.getElementById("travail");
             change.id = 'pause';
 
-            // if (change) {
-            //     document.body.style.backgroundColor = "red";
-            //     let change = document.getElementById("pause");
-            // }
         }
     }, 1000);
 }
@@ -62,8 +79,7 @@ function stop() {
     location.reload();
 }
 
-let form1 = document.getElementById('tmpstravail').value;
-let form2 = document.getElementById('tmpspause').value;
+
 
 //recharge la page : location.reload();
 //https://www.commentcoder.com/timer-javascript/
